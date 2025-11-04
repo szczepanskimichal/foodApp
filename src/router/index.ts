@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage.vue';
 import MenuPage from '../pages/MenuPage.vue';
 import AboutPage from '../pages/AboutPage.vue';
 import LocationPage from '../pages/LocationPage.vue';
+import NotFoundPage from '../pages/404Page.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,6 +28,15 @@ const router = createRouter({
       name: 'location',
       component: LocationPage,
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: '404Page',
+      component: NotFoundPage,
+      meta: {
+        title: '404 - Page Not Found'
+      },
+    },
+
   ],
 });
 
