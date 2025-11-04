@@ -113,43 +113,43 @@
 
 @keyframes truckDrive {
   0% {
-    transform: translateX(-120px) scale(1);
-    left: -60px;
+    transform: translateX(120px) scale(1);
+    left: calc(100% + 60px);
   }
   15% {
     transform: translateX(0) scale(1.1);
-    left: 20%;
+    left: 60%;
   }
   85% {
     transform: translateX(0) scale(1.1);
-    left: 60%;
+    left: 20%;
   }
   100% {
-    transform: translateX(120px) scale(0.8);
-    left: calc(100% + 60px);
+    transform: translateX(-120px) scale(0.8);
+    left: -60px;
   }
 }
 
 @keyframes smokeTrail {
   0% {
     opacity: 0;
-    transform: translateX(-100px) scale(0.5);
-    left: -40px;
+    transform: translateX(100px) scale(0.5);
+    left: calc(100% + 40px);
   }
   15% {
     opacity: 0.7;
-    transform: translateX(-20px) scale(1);
-    left: 20%;
+    transform: translateX(20px) scale(1);
+    left: 60%;
   }
   85% {
     opacity: 0.7;
-    transform: translateX(-20px) scale(1);
-    left: 60%;
+    transform: translateX(20px) scale(1);
+    left: 20%;
   }
   100% {
     opacity: 0;
-    transform: translateX(20px) scale(0.5);
-    left: calc(100% + 40px);
+    transform: translateX(-20px) scale(0.5);
+    left: -40px;
   }
 }
 
