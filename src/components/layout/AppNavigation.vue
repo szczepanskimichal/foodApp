@@ -5,7 +5,7 @@
     <div class="container">
       <div class="nav-content">
         <router-link to="/" class="logo">
-          <img src="../../assets/burgerImg.webp" alt="Logo" />
+          <img src="../../assets/burgerLogo.png" alt="Logo" />
         <span class="brand-text">ShmashingBurger</span>
       </router-link>
       <div class="nav-links">
