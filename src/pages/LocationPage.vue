@@ -15,16 +15,15 @@
       <div class="schedule">
         <h2>Weekly Schedule</h2>
         <ul>
-          <li><strong>Monday:</strong> Business District (9th & Pine)</li>
-          <li><strong>Tuesday:</strong> University Campus (Student Center)</li>
-          <li><strong>Wednesday:</strong> Central Park (Food Truck Row)</li>
-          <li><strong>Thursday:</strong> Downtown (Main & 5th)</li>
-          <li><strong>Friday:</strong> Tech District (Innovation Hub)</li>
-          <li><strong>Saturday:</strong> Farmers Market (City Square)</li>
-          <li><strong>Sunday:</strong> Waterfront Park</li>
+          <li><strong>Mandag:</strong> Bjørvika (Oslo sentrum)</li>
+          <li><strong>Tirsdag:</strong> Universitetet i Oslo (Blindern)</li>
+          <li><strong>Onsdag:</strong> Nygårdsparken (Bergen)</li>
+          <li><strong>Torsdag:</strong> Solsiden (Trondheim)</li>
+          <li><strong>Fredag:</strong> Fornebu (Technologiparken)</li>
+          <li><strong>Lørdag:</strong> Bondens Marked (Karl Johans gate)</li>
+          <li><strong>Søndag:</strong> Aker Brygge (Vannkanten)</li>
         </ul>
       </div>
-      
       <div class="contact">
         <h2>Contact</h2>
         <p>📞 (+47) 8687889</p>
@@ -34,7 +33,6 @@
     </div>
   </div>
 </template>
-
 <style scoped>
 .location-page {
   padding: 2rem 0;
