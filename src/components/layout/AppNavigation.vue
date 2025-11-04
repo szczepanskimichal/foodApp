@@ -13,6 +13,7 @@
         <router-link to="/menu" class="nav-link">Menu</router-link>
         <router-link to="/about" class="nav-link">About</router-link>
         <router-link to="/location" class="nav-link">Location</router-link>
+        <router-link to="/reviews" class="nav-link">Reviews</router-link>
       </div>
     </div>
     </div>

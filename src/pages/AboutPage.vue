@@ -24,7 +24,7 @@
             <p>Head Chef</p>
           </div>
           <div class="team-member">
-            <h3>Silje Jerzak</h3>
+            <h3>Silje Vestrum Bakken</h3>
             <p>Marketing Specialist</p>
           </div>
         </div>
