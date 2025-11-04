@@ -4,10 +4,10 @@
   <nav class="nav"> 
     <div class="container">
       <div class="nav-content">
-        <div class="logo">
+        <router-link to="/" class="logo">
           <img src="../../assets/burgerImg.webp" alt="Logo" />
         <span class="brand-text">ShmashingBurger</span>
-      </div>
+      </router-link>
       <div class="nav-links">
         <router-link to="/" class="nav-link">Home</router-link>
         <router-link to="/menu" class="nav-link">Menu</router-link>
@@ -40,7 +40,14 @@
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
+
+.logo:hover {
+  text-decoration: none;
+}
+
 .logo img {
   height: 40px;
   width: 40px;
