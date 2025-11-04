@@ -6,7 +6,7 @@
       <div class="nav-content">
         <router-link to="/" class="logo">
           <img src="../../assets/burgerLogo.png" alt="Logo" />
-        <span class="brand-text">ShmashingBurger</span>
+          <span class="brand-text">ShmashingBurger</span>
       </router-link>
       <div class="nav-links">
         <router-link to="/" class="nav-link">Home</router-link>
@@ -50,8 +50,8 @@
 }
 
 .logo img {
-  height: 40px;
-  width: 40px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   object-fit: cover;
 }
