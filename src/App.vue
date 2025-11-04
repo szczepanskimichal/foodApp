@@ -16,8 +16,7 @@ import AppFooter from './components/layout/AppFooter.vue';
 
     <main class="main-content">
       <div class="container">
-        <h1>Welcome to ShmashingBurger</h1>
-        <p>Your favorite place for delicious burgers!</p>
+        <router-view />
       </div>
     </main>
 
