@@ -6,7 +6,9 @@ import AppFooter from './components/layout/AppFooter.vue';
     <header class="header">
       <div class="container">
         <div class="brand">
-          <span class="brand-icon">Logo</span>
+          <span class="brand-icon">
+            <img src="./assets/burgerImg.webp" alt="Logo" />
+          </span>
           <span class="brand-text">ShmashingBurger</span>
         </div>
       </div>
@@ -43,7 +45,13 @@ import AppFooter from './components/layout/AppFooter.vue';
 }
 
 .brand-icon {
-  font-size: 1.5rem;
+  font-size: 0.5rem;
+}
+.brand-icon img {
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .brand-text {
