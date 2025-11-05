@@ -26,11 +26,15 @@ const reviews = [
   <div>
     <h1>Customers Reviews</h1>
     <p>What customers are saying about ours burgers</p>
-    <ul>
-      <ol v-for="review in reviews" :key="review.id">
-        <h2>{{ review.id + ': ' + review.name }}</h2>
+    <div class="review-grid">
+      <div class="review-card" v-for="review in reviews" :key="review.id">
+        <div class="review-header">
+          <h3>{{ review.name }}</h3>
+          <p class="review-stars">{{ '★'.repeat(review.rating) }}</p>
+        </div>
         <p>{{ review.content }}</p>
-      </ol>
-    </ul>
+        <p class="review-date">{{ review.date }}</p>
+      </div>
+    </div>
   </div>
 </template>
