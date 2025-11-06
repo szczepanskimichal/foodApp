@@ -201,4 +201,32 @@ const { t } = useI18n()
   color: white;
   transform: translateY(-2px);
 }
+
+/* Dark Mode Styles */
+body.dark-mode .not-found-page {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 50%, #1a1a1a 100%) !important;
+}
+
+body.dark-mode .error-content {
+  background: #2d2d2d !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .error-content h1 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .error-content p {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .btn-outline {
+  border-color: #dc2626 !important;
+  color: #dc2626 !important;
+}
+
+body.dark-mode .btn-outline:hover {
+  background: #dc2626 !important;
+  color: white !important;
+}
 </style>

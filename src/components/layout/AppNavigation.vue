@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LanguageSwitcher from '../ui/LanguageSwitcher.vue'
+import ThemeToggle from '../ui/ThemeToggle.vue'
 import { useI18n } from '../../composables/useI18n'
 
 const { t } = useI18n()
@@ -18,7 +19,10 @@ const { t } = useI18n()
         <router-link to="/about" class="nav-link">{{ t('nav.about') }}</router-link>
         <router-link to="/location" class="nav-link">{{ t('nav.location') }}</router-link>
         <router-link to="/reviews" class="nav-link">{{ t('nav.reviews') }}</router-link>
-        <LanguageSwitcher />
+        <div class="nav-controls">
+          <ThemeToggle />
+          <LanguageSwitcher />
+        </div>
       </div>
     </div>
     </div>
@@ -73,6 +77,13 @@ const { t } = useI18n()
   align-items: center;
 }
 
+.nav-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
 .nav-link {
   color: white;
   text-decoration: none;
@@ -94,6 +105,13 @@ const { t } = useI18n()
   }
   
   .nav-links {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-controls {
+    margin-left: 0;
     gap: 0.5rem;
   }
   

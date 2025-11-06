@@ -347,4 +347,57 @@ const submitForm = async () => {
     width: 100%;
   }
 }
+
+/* Dark Mode Styles */
+body.dark-mode .modal-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.dark-mode .modal-content {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .modal-header h2 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .close-btn {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .close-btn:hover {
+  color: #e5e5e5 !important;
+  background: #404040 !important;
+}
+
+body.dark-mode .form-group label {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea {
+  background: #1a1a1a !important;
+  border-color: #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .form-input:focus,
+body.dark-mode .form-textarea:focus {
+  border-color: #dc2626 !important;
+  background: #2d2d2d !important;
+}
+
+body.dark-mode .btn-secondary {
+  background: transparent !important;
+  color: #b3b3b3 !important;
+  border-color: #404040 !important;
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: #404040 !important;
+  border-color: #555555 !important;
+  color: #e5e5e5 !important;
+}
 </style>

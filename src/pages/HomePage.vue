@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+
 import { useI18n } from '../composables/useI18n'
 
 const router = useRouter()
@@ -178,6 +179,7 @@ const goToReviews = () => {
 
 .hero-text {
   color: white;
+  transition: color 0.3s ease;
 }
 
 .hero-title {
@@ -186,11 +188,14 @@ const goToReviews = () => {
   margin-bottom: 1rem;
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .title-accent {
   color: #fbbf24;
   display: block;
+  transition: color 0.3s ease;
 }
 
 .hero-subtitle {
@@ -198,6 +203,8 @@ const goToReviews = () => {
   font-weight: 300;
   margin-bottom: 1.5rem;
   opacity: 0.9;
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .hero-description {
@@ -205,6 +212,8 @@ const goToReviews = () => {
   line-height: 1.6;
   margin-bottom: 2.5rem;
   opacity: 0.9;
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .hero-buttons {
@@ -434,5 +443,149 @@ const goToReviews = () => {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .hero-background {
+  background: linear-gradient(135deg, #7f1d1d 0%, #a16207 50%, #7f1d1d 100%) !important;
+}
+
+body.dark-mode .hero-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .hero-text {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .hero-title {
+  color: #e5e5e5 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+body.dark-mode .title-accent {
+  color: #fbbf24 !important;
+}
+
+body.dark-mode .hero-subtitle {
+  color: #e5e5e5 !important;
+  opacity: 0.9 !important;
+}
+
+body.dark-mode .hero-description {
+  color: #e5e5e5 !important;
+  opacity: 0.9 !important;
+}
+
+body.dark-mode .hero-buttons .btn-primary {
+  background: #fbbf24 !important;
+  color: #1a1a1a !important;
+}
+
+body.dark-mode .hero-buttons .btn-primary:hover {
+  background: #f59e0b !important;
+  color: #1a1a1a !important;
+}
+
+body.dark-mode .hero-buttons .btn-secondary {
+  background: transparent !important;
+  border: 2px solid #e5e5e5 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .hero-buttons .btn-secondary:hover {
+  background: #e5e5e5 !important;
+  color: #1a1a1a !important;
+}
+
+body.dark-mode .features {
+  background: #1a1a1a !important;
+}
+
+body.dark-mode .feature-card {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .feature-card:hover {
+  background: #353535 !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .feature-card h3 {
+  color: #dc2626 !important;
+}
+
+body.dark-mode .feature-card p {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .stats {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+}
+
+body.dark-mode .stat-number {
+  color: #fbbf24 !important;
+}
+
+body.dark-mode .stat-label {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .cta {
+  background: linear-gradient(135deg, #7f1d1d 0%, #a16207 100%) !important;
+}
+
+body.dark-mode .cta-title {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .cta-description {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .section-title {
+  color: #e5e5e5 !important;
+}
+
+/* Light Mode Reset Styles */
+body:not(.dark-mode) .hero-text {
+  color: white !important;
+}
+
+body:not(.dark-mode) .hero-title {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+body:not(.dark-mode) .title-accent {
+  color: #fbbf24 !important;
+}
+
+body:not(.dark-mode) .hero-subtitle {
+  color: white !important;
+  opacity: 0.9 !important;
+}
+
+body:not(.dark-mode) .hero-description {
+  color: white !important;
+  opacity: 0.9 !important;
+}
+
+body:not(.dark-mode) .hero-buttons .btn-primary {
+  background: #fbbf24 !important;
+  color: #1f2937 !important;
+}
+
+body:not(.dark-mode) .hero-buttons .btn-secondary {
+  background: transparent !important;
+  border: 2px solid white !important;
+  color: white !important;
+}
+
+body:not(.dark-mode) .hero-buttons .btn-secondary:hover {
+  background: white !important;
+  color: #dc2626 !important;
 }
 </style>

@@ -87,4 +87,38 @@ const { isConfigured } = useEmailJS()
 .config-details a:hover {
   text-decoration: underline;
 }
+
+/* Dark Mode Styles */
+body.dark-mode .config-warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.15)) !important;
+  border-color: #f59e0b !important;
+}
+
+body.dark-mode .warning-content h3 {
+  color: #fbbf24 !important;
+}
+
+body.dark-mode .warning-content p {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .config-details summary {
+  color: #fbbf24 !important;
+}
+
+body.dark-mode .config-details ol {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .config-details a {
+  color: #f87171 !important;
+}
+
+body.dark-mode .config-details li {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .config-details a:hover {
+  color: #dc2626 !important;
+}
 </style>

@@ -541,4 +541,84 @@ const setCategory = (category: string) => {
     font-size: 2rem;
   }
 }
+
+/* Dark Mode Styles */
+body.dark-mode .menu-page {
+  background: #1a1a1a !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .menu-header h1 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .menu-header p {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .category-btn {
+  background: #2d2d2d !important;
+  color: #e5e5e5 !important;
+  border-color: #404040 !important;
+}
+
+body.dark-mode .category-btn:hover {
+  background: #404040 !important;
+}
+
+body.dark-mode .category-btn.active {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+body.dark-mode .menu-item {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .menu-item:hover {
+  background: #353535 !important;
+  border-color: #555555 !important;
+}
+
+body.dark-mode .item-name {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .item-description {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .price {
+  color: #dc2626 !important;
+}
+
+body.dark-mode .item-badges .badge {
+  background: #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .badge.popular {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+body.dark-mode .badge.spicy {
+  background: #ea580c !important;
+  color: white !important;
+}
+
+body.dark-mode .menu-stats {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+}
+
+body.dark-mode .stat-number {
+  color: #dc2626 !important;
+}
+
+body.dark-mode .stat-label {
+  color: #b3b3b3 !important;
+}
 </style>

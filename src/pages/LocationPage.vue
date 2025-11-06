@@ -270,4 +270,49 @@ onMounted(() => {
     min-width: auto;
   }
 }
+
+/* Dark Mode Styles */
+body.dark-mode .location-page {
+  background: #1a1a1a !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .location-page h1 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .location-page p {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .map-section h2 {
+  color: #dc2626 !important;
+}
+
+body.dark-mode .location-info > div {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .location-info h2 {
+  color: #dc2626 !important;
+}
+
+body.dark-mode .location-info p {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .schedule li {
+  background: #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .social-media h3 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .social-media {
+  border-top-color: #404040 !important;
+}
 </style>

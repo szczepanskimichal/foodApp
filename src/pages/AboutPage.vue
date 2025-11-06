@@ -216,4 +216,41 @@ const closeJobModal = () => {
     width: 200px;
   }
 }
+
+/* Dark Mode Styles */
+body.dark-mode .about-page {
+  background: #1a1a1a !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .about-content h1 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .about-content h2 {
+  color: #dc2626 !important;
+}
+
+body.dark-mode .about-content p {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .team-member {
+  background: #2d2d2d !important;
+  border: 1px solid #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .team-member:hover {
+  background: #353535 !important;
+  border-color: #555555 !important;
+}
+
+body.dark-mode .team-member h3 {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .team-member p {
+  color: #b3b3b3 !important;
+}
 </style>

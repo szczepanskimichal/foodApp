@@ -190,4 +190,39 @@ onMounted(() => {
   opacity: 0;
   transform: translateX(100%);
 }
+
+/* Dark Mode Styles */
+body.dark-mode .toast {
+  background: #2d2d2d !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .toast-success {
+  background: rgba(16, 185, 129, 0.1) !important;
+}
+
+body.dark-mode .toast-error {
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+body.dark-mode .toast-warning {
+  background: rgba(245, 158, 11, 0.1) !important;
+}
+
+body.dark-mode .toast-info {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+body.dark-mode .toast-message {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .toast-close {
+  color: #b3b3b3 !important;
+}
+
+body.dark-mode .toast-close:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #e5e5e5 !important;
+}
 </style>

@@ -138,4 +138,34 @@ onUnmounted(() => {
 .lang-option:last-child {
   border-radius: 0 0 0.375rem 0.375rem;
 }
+
+/* Dark Mode Styles */
+body.dark-mode .lang-button {
+  background: rgba(45, 45, 45, 0.8) !important;
+  border-color: #404040 !important;
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .lang-button:hover {
+  background: rgba(64, 64, 64, 0.8) !important;
+}
+
+body.dark-mode .dropdown {
+  background: #2d2d2d !important;
+  border-color: #404040 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .lang-option {
+  color: #e5e5e5 !important;
+}
+
+body.dark-mode .lang-option:hover {
+  background: #404040 !important;
+}
+
+body.dark-mode .lang-option.active {
+  background: rgba(220, 38, 38, 0.1) !important;
+  color: #dc2626 !important;
+}
 </style>
