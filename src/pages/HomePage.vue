@@ -3,7 +3,7 @@
 
 <template>
   `<div class="home/page">
-    <h1>Welcome to ShmashingBurger FoodTrack</h1>
+    <h1>Welcome to ShmashingBurger FoodTruck</h1>
     <p>The best gourmet burgers in town, served fresh from our mobile kitchen!</p>
     <div class="hero-content">
       <h2>Why Choose Us</h2>

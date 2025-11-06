@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import AppFooter from './components/layout/AppFooter.vue';
 import AppNavigation from './components/layout/AppNavigation.vue';
+import ToastContainer from './components/ui/ToastContainer.vue';
 </script>
 <template>
   <AppNavigation />
 
     <main class="main-content">
-      <div class="container">
+     
         <router-view />
-      </div>
     </main>
 
 
     <AppFooter />
+    <ToastContainer />
 
 </template>
 <style scoped>
