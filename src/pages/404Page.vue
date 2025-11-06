@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 <template>
   <div class="not-found-page">
     <div class="error-content">
@@ -18,13 +23,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useI18n } from '../composables/useI18n'
-
-const { t } = useI18n()
-</script>
-
 <style scoped>
 .not-found-page {
   min-height: 70vh;

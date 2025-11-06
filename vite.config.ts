@@ -9,4 +9,9 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
+  base: '/foodApp/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
 })

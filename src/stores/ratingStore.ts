@@ -7,10 +7,7 @@ const ratingStore = {
     this.rating = '';
   }
 };
-type RatingStore = {
-  rating: string,
 
-}
 export default ratingStore;
 
 
