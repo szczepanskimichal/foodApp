@@ -41,7 +41,7 @@ const closeJobModal = () => {
         <h2>Meet the Team</h2>
         <div class="team-grid">
           <div class="team-member">
-            <h3>Michal Jerzak</h3>
+            <!-- <h3>Michal Jerzak</h3> -->
             <p>Founder & CEO</p>
           </div>
           <div class="team-member">
@@ -49,11 +49,11 @@ const closeJobModal = () => {
             <p>Co-Founder & CTO</p>
           </div>
           <div class="team-member">
-            <h3>Michal Jerzak</h3>
+            <!-- <h3>Michal Jerzak</h3> -->
             <p>Head Chef</p>
           </div>
           <div class="team-member">
-            <h3>Silje Vestrum Bakken</h3>
+            <!-- <h3>Silje Vestrum Bakken</h3> -->
             <p>Marketing Specialist</p>
           </div>
         </div>
