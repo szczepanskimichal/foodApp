@@ -3,7 +3,7 @@
 
 <template>
   <footer>
-    <p>© 2025 ShmashingBurger. All rights reserved.</p>
+    <p>© 2025 SmashingBurger. All rights reserved.</p>
   </footer>
 </template>
 

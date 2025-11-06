@@ -60,8 +60,10 @@ import { onMounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { useI18n } from '../composables/useI18n'
+import { useImageOptimization } from '../composables/useImageOptimization'
 
 const { t } = useI18n()
+const { isSlowConnection } = useImageOptimization()
 const mapContainer = ref<HTMLElement>()
 
 onMounted(() => {
@@ -73,10 +75,23 @@ onMounted(() => {
     // Initialize the map
     const map = L.map(mapContainer.value).setView([lat, lng], 15)
     
+    // Use different tile servers based on connection speed
+    const tileUrl = isSlowConnection.value 
+      ? 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'  // Basic tiles for slow connections
+      : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    
+    const tileOptions = {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      // Reduce tile loading for slow connections
+      ...(isSlowConnection.value && {
+        updateWhenIdle: true,
+        updateWhenZooming: false,
+        keepBuffer: 2
+      })
+    }
+    
     // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map)
+    L.tileLayer(tileUrl, tileOptions).addTo(map)
     
     // Custom burger truck icon
     const truckIcon = L.divIcon({

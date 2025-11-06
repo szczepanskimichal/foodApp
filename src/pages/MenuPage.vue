@@ -2,9 +2,11 @@
 import { ref, computed } from 'vue'
 // import { useToast } from '../composables/useToast'
 import { useI18n } from '../composables/useI18n'
+import { useImageOptimization } from '../composables/useImageOptimization'
 
 // const { showSuccess, showInfo } = useToast()
 const { t } = useI18n()
+const { getOptimizedImageUrl, isSlowConnection } = useImageOptimization()
 
 interface MenuItem {
   id: number
@@ -219,7 +221,12 @@ const setCategory = (category: string) => {
       >
         <!-- Item Image -->
         <div class="item-image">
-          <img :src="item.image" :alt="item.name" />
+          <img 
+            :src="getOptimizedImageUrl(item.image)" 
+            :alt="item.name" 
+            loading="lazy"
+            :class="{ 'low-quality': isSlowConnection }"
+          />
           <div class="item-badges">
             <span v-if="item.popular" class="badge popular">🔥 Popular</span>
             <span v-if="item.spicy" class="badge spicy">🌶️ Spicy</span>
@@ -351,12 +358,18 @@ const setCategory = (category: string) => {
 
 .item-image img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
+  border-radius: 0.75rem;
   transition: transform 0.3s ease;
 }
 
-.menu-item:hover .item-image img {
+.item-image img.low-quality {
+  filter: contrast(1.1) brightness(1.05);
+  transition: filter 0.3s ease;
+}
+
+.item-image:hover img {
   transform: scale(1.05);
 }
 

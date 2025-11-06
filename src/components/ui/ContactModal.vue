@@ -1,80 +1,3 @@
-<template>
-  <div v-if="isOpen" class="modal-backdrop" @click="closeModal">
-    <div class="modal-content" @click.stop>
-      <div class="modal-header">
-        <h2>Contact Us 📞</h2>
-        <button class="close-btn" @click="closeModal">&times;</button>
-      </div>
-      
-      <form @submit.prevent="submitForm" class="contact-form">
-        <div class="form-group">
-          <label for="name">Name *</label>
-          <input 
-            type="text" 
-            id="name" 
-            v-model="form.name" 
-            required 
-            placeholder="Your full name"
-          />
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input 
-            type="email" 
-            id="email" 
-            v-model="form.email" 
-            required 
-            placeholder="your.email@example.com"
-          />
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input 
-            type="tel" 
-            id="phone" 
-            v-model="form.phone" 
-            placeholder="+47 123 45 678"
-          />
-        </div>
-        
-        <div class="form-group">
-          <label for="subject">Subject *</label>
-          <select id="subject" v-model="form.subject" required>
-            <option value="">Select a topic</option>
-            <option value="general">General Inquiry</option>
-            <option value="catering">Catering Services</option>
-            <option value="complaint">Complaint</option>
-            <option value="compliment">Compliment</option>
-            <option value="partnership">Business Partnership</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea 
-            id="message" 
-            v-model="form.message" 
-            required 
-            rows="4"
-            placeholder="Tell us how we can help you..."
-          ></textarea>
-        </div>
-        
-        <div class="form-actions">
-          <button type="button" class="btn btn-secondary" @click="closeModal">
-            Cancel
-          </button>
-          <button type="submit" class="btn btn-primary" :disabled="isSubmitting || !isFormValid">
-            {{ isSubmitting ? 'Sending...' : 'Send Message' }} ✉️
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue'
 import { useToast } from '../../composables/useToast'
@@ -170,7 +93,84 @@ const submitForm = async () => {
     isSubmitting.value = false
   }
 }
-</script>
+</script><template>
+  <div v-if="isOpen" class="modal-backdrop" @click="closeModal">
+    <div class="modal-content" @click.stop>
+      <div class="modal-header">
+        <h2>Contact Us 📞</h2>
+        <button class="close-btn" @click="closeModal">&times;</button>
+      </div>
+      
+      <form @submit.prevent="submitForm" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input 
+            type="text" 
+            id="name" 
+            v-model="form.name" 
+            required 
+            placeholder="Your full name"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input 
+            type="email" 
+            id="email" 
+            v-model="form.email" 
+            required 
+            placeholder="your.email@example.com"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            v-model="form.phone" 
+            placeholder="+47 123 45 678"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <select id="subject" v-model="form.subject" required>
+            <option value="">Select a topic</option>
+            <option value="general">General Inquiry</option>
+            <option value="catering">Catering Services</option>
+            <option value="complaint">Complaint</option>
+            <option value="compliment">Compliment</option>
+            <option value="partnership">Business Partnership</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea 
+            id="message" 
+            v-model="form.message" 
+            required 
+            rows="4"
+            placeholder="Tell us how we can help you..."
+          ></textarea>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" @click="closeModal">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary" :disabled="isSubmitting || !isFormValid">
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }} ✉️
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+
 
 <style scoped>
 .modal-backdrop {

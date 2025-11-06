@@ -11,7 +11,7 @@ const { t } = useI18n()
       <div class="nav-content">
         <router-link to="/" class="logo">
           <img src="../../assets/burgerLogo.png" alt="Logo" />
-          <span class="brand-text">ShmashingBurger</span>
+          <span class="brand-text">SmashingBurger</span>
       </router-link>
       <div class="nav-links">
         <router-link to="/" class="nav-link">{{ t('nav.home') }}</router-link>

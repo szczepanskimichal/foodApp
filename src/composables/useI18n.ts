@@ -245,6 +245,22 @@ const translations = reactive({
       message: 'Entschuldigung, die Seite, die Sie suchen, existiert nicht.',
       backHome: 'Zurück zur Startseite'
     }
+  },
+
+  // Connection warnings
+  connection: {
+    no: {
+      slowDetected: 'Langsom tilkobling oppdaget. Bilder og kart kan laste senere.'
+    },
+    en: {
+      slowDetected: 'Slow connection detected. Images and maps may load slower.'
+    },
+    pl: {
+      slowDetected: 'Wykryto wolne połączenie. Obrazy i mapy mogą ładować się wolniej.'
+    },
+    de: {
+      slowDetected: 'Langsame Verbindung erkannt. Bilder und Karten können langsamer laden.'
+    }
   }
 })
 

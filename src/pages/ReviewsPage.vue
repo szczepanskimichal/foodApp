@@ -19,20 +19,20 @@ const reviews = ref([ // this is very important to remember aobut ref!!!!
     name: 'John Doe',
     rating: 5, 
     content: 'The best burgers I have ever had. Highly recommend!',
-    date: '2024-06-15'
+    date: '11/6/2025'
    },
   { id: 2, 
     name: 'Jane Smith', 
     rating: 4, 
     content: 'The staff were friendly and the service was quick.', 
-    date: '2024-06-16' 
+    date: '11/6/2025' 
   },
   { 
     id: 3, 
     name: 'Alice Johnson', 
     rating: 5, 
     content: 'Delicious food and a great atmosphere. Can\'t wait to return!', 
-    date: '2024-06-17' 
+    date: '11/6/2025' 
   },
 ]);
 
@@ -62,7 +62,7 @@ const submitReview = () => {
       content: newReview.value.content,
       date: new Date().toLocaleDateString('en-US', { 
         year: 'numeric', 
-        month: 'long', 
+        month: 'numeric', 
         day: 'numeric' 
       })
     }
