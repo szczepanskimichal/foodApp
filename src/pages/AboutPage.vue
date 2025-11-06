@@ -1,14 +1,25 @@
 <script setup lang="ts">
-import { useToast } from '../composables/useToast'
+import { ref } from 'vue'
+import ContactModal from '../components/ui/ContactModal.vue'
+import JobApplicationModal from '../components/ui/JobApplicationModal.vue'
 
-const { showSuccess, showInfo } = useToast()
+const showContactModal = ref(false)
+const showJobModal = ref(false)
 
 const contactUs = () => {
-  showInfo('Feel free to call us or visit our location! 📍')
+  showContactModal.value = true
 }
 
 const joinTeam = () => {
-  showSuccess('We love passionate people! Send us your resume! 👨‍🍳')
+  showJobModal.value = true
+}
+
+const closeContactModal = () => {
+  showContactModal.value = false
+}
+
+const closeJobModal = () => {
+  showJobModal.value = false
 }
 </script>
 <template>
@@ -50,6 +61,10 @@ const joinTeam = () => {
         </div>
       </section>
     </div>
+    
+    <!-- Modals -->
+    <ContactModal :isOpen="showContactModal" @close="closeContactModal" />
+    <JobApplicationModal :isOpen="showJobModal" @close="closeJobModal" />
   </div>
 </template>
 <style scoped>

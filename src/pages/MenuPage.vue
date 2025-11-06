@@ -37,7 +37,7 @@ const menuItems: MenuItem[] = [
     description: 'Smoked bacon, BBQ sauce, onion rings, cheddar cheese, beef patty',
     price: 209,
     emoji: '🥓',
-    image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop',
     category: 'burgers',
     popular: true
   },
@@ -57,7 +57,7 @@ const menuItems: MenuItem[] = [
     description: 'Sautéed mushrooms, Swiss cheese, truffle aioli, arugula',
     price: 199,
     emoji: '🍄',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1550317138-10000687a72b?w=400&h=300&fit=crop',
     category: 'burgers'
   },
   {
@@ -66,7 +66,7 @@ const menuItems: MenuItem[] = [
     description: 'Beyond meat patty, avocado, sprouts, vegan cheese, herb mayo',
     price: 179,
     emoji: '🥬',
-    image: 'https://images.unsplash.com/photo-1525059696034-4967a729002e?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&h=300&fit=crop',
     category: 'burgers',
     vegetarian: true
   },
