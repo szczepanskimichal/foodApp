@@ -2,6 +2,8 @@
 import AppFooter from './components/layout/AppFooter.vue';
 import AppNavigation from './components/layout/AppNavigation.vue';
 import ToastContainer from './components/ui/ToastContainer.vue';
+import InstallPrompt from './components/ui/InstallPrompt.vue';
+import PWADebug from './components/ui/PWADebug.vue';
 </script>
 <template>
   <AppNavigation />
@@ -14,6 +16,8 @@ import ToastContainer from './components/ui/ToastContainer.vue';
 
     <AppFooter />
     <ToastContainer />
+    <InstallPrompt />
+    <PWADebug />
 
 </template>
 <style>

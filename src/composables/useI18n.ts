@@ -261,6 +261,34 @@ const translations = reactive({
     de: {
       slowDetected: 'Langsame Verbindung erkannt. Bilder und Karten können langsamer laden.'
     }
+  },
+
+  // PWA Install Prompt
+  pwa: {
+    no: {
+      installTitle: 'Installer appen',
+      installDescription: 'Få rask tilgang til våre burgere direkte fra hjemskjermen!',
+      install: 'Installer',
+      later: 'Senere'
+    },
+    en: {
+      installTitle: 'Install App',
+      installDescription: 'Get quick access to our burgers directly from your home screen!',
+      install: 'Install',
+      later: 'Later'
+    },
+    pl: {
+      installTitle: 'Zainstaluj aplikację',
+      installDescription: 'Uzyskaj szybki dostęp do naszych burgerów bezpośrednio z ekranu głównego!',
+      install: 'Zainstaluj',
+      later: 'Później'
+    },
+    de: {
+      installTitle: 'App installieren',
+      installDescription: 'Erhalten Sie schnellen Zugang zu unseren Burgern direkt von Ihrem Startbildschirm!',
+      install: 'Installieren',
+      later: 'Später'
+    }
   }
 })
 
