@@ -80,54 +80,58 @@ const translations = reactive({
     no: { 
       title: 'Vår meny', 
       subtitle: 'Deilige burgere laget med kjærlighet og ferske ingredienser',
-      addToCart: 'Legg i kurv',
-      categories: {
-        all: 'Alle varer',
-        burgers: 'Burgere',
-        chicken: 'Kylling',
-        sides: 'Tilbehør',
-        drinks: 'Drikker',
-        desserts: 'Desserter'
-      }
+      addToCart: 'Legg i kurv'
     },
     en: { 
       title: 'Our Menu', 
       subtitle: 'Delicious burgers made with love and fresh ingredients',
-      addToCart: 'Add to Cart',
-      categories: {
-        all: 'All Items',
-        burgers: 'Burgers',
-        chicken: 'Chicken',
-        sides: 'Sides',
-        drinks: 'Drinks',
-        desserts: 'Desserts'
-      }
+      addToCart: 'Add to Cart'
     },
     pl: { 
       title: 'Nasze Menu', 
       subtitle: 'Pyszne burgery robione z miłością i świeżymi składnikami',
-      addToCart: 'Dodaj do koszyka',
-      categories: {
-        all: 'Wszystkie pozycje',
-        burgers: 'Burgery',
-        chicken: 'Kurczak',
-        sides: 'Dodatki',
-        drinks: 'Napoje',
-        desserts: 'Desery'
-      }
+      addToCart: 'Dodaj do koszyka'
     },
     de: { 
       title: 'Unser Menü', 
       subtitle: 'Köstliche Burger mit Liebe und frischen Zutaten zubereitet',
-      addToCart: 'In den Warenkorb',
-      categories: {
-        all: 'Alle Artikel',
-        burgers: 'Burger',
-        chicken: 'Hähnchen',
-        sides: 'Beilagen',
-        drinks: 'Getränke',
-        desserts: 'Desserts'
-      }
+      addToCart: 'In den Warenkorb'
+    }
+  },
+
+  // Menu Categories
+  categories: {
+    no: {
+      all: 'Alle varer',
+      burgers: 'Burgere',
+      chicken: 'Kylling',
+      sides: 'Tilbehør',
+      drinks: 'Drikker',
+      desserts: 'Desserter'
+    },
+    en: {
+      all: 'All Items',
+      burgers: 'Burgers',
+      chicken: 'Chicken',
+      sides: 'Sides',
+      drinks: 'Drinks',
+      desserts: 'Desserts'
+    },
+    pl: {
+      all: 'Wszystkie pozycje',
+      burgers: 'Burgery',
+      chicken: 'Kurczak',
+      sides: 'Dodatki',
+      drinks: 'Napoje',
+      desserts: 'Desery'
+    },
+    de: {
+      all: 'Alle Artikel',
+      burgers: 'Burger',
+      chicken: 'Hähnchen',
+      sides: 'Beilagen',
+      drinks: 'Getränke',
+      desserts: 'Desserts'
     }
   },
 

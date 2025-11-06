@@ -164,12 +164,12 @@ const menuItems: MenuItem[] = [
 ]
 
 const categories = computed(() => [
-  { id: 'all', name: t('menu.categories.all'), emoji: '🍽️' },
-  { id: 'burgers', name: t('menu.categories.burgers'), emoji: '🍔' },
-  { id: 'chicken', name: t('menu.categories.chicken'), emoji: '🐔' },
-  { id: 'sides', name: t('menu.categories.sides'), emoji: '🍟' },
-  { id: 'drinks', name: t('menu.categories.drinks'), emoji: '🥤' },
-  { id: 'desserts', name: t('menu.categories.desserts'), emoji: '🍫' }
+  { id: 'all', name: t('categories.all'), emoji: '🍽️' },
+  { id: 'burgers', name: t('categories.burgers'), emoji: '🍔' },
+  { id: 'chicken', name: t('categories.chicken'), emoji: '🐔' },
+  { id: 'sides', name: t('categories.sides'), emoji: '🍟' },
+  { id: 'drinks', name: t('categories.drinks'), emoji: '🥤' },
+  { id: 'desserts', name: t('categories.desserts'), emoji: '🍫' }
 ])
 
 const filteredItems = computed(() => {

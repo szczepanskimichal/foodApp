@@ -1,8 +1,8 @@
 // Web3Forms Configuration
 const WEB3FORMS_CONFIG = {
-  ACCESS_KEY: 'f08e6690-f3a7-485f-a162-1a5f2de49c26',
+  ACCESS_KEY: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '',
   ENDPOINT: 'https://api.web3forms.com/submit',
-  TO_EMAIL: 'michalszczepanski07@gmail.com'
+  TO_EMAIL: import.meta.env.VITE_WEB3FORMS_TO_EMAIL || 'michalszczepanski07@gmail.com'
 }
 
 export const useEmailJS = () => {
@@ -121,7 +121,11 @@ ${formData.coverLetter}
 
   // Web3Forms jest zawsze skonfigurowane jeśli mamy access key
   const isConfigured = () => {
-    return WEB3FORMS_CONFIG.ACCESS_KEY !== ''
+    const hasAccessKey = WEB3FORMS_CONFIG.ACCESS_KEY !== ''
+    if (!hasAccessKey) {
+      console.warn('Web3Forms Access Key not found. Please check your .env file.')
+    }
+    return hasAccessKey
   }
 
   // Funkcja inicjalizacji nie jest potrzebna dla Web3Forms
