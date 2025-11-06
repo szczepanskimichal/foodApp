@@ -2,11 +2,9 @@
 import AppFooter from './components/layout/AppFooter.vue';
 import AppNavigation from './components/layout/AppNavigation.vue';
 import ToastContainer from './components/ui/ToastContainer.vue';
-import ConnectionWarning from './components/ui/ConnectionWarning.vue';
 </script>
 <template>
   <AppNavigation />
-  <ConnectionWarning />
 
     <main class="main-content">
      
