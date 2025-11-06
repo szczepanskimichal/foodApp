@@ -120,6 +120,7 @@ const submitReview = () => {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
+  justify-content: center;
 }
 
 .review-card {
@@ -131,8 +132,9 @@ const submitReview = () => {
 
 .review-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap:1rem;
   margin-bottom: 1rem;
 }
 
