@@ -2,6 +2,9 @@
 import { ref } from 'vue'
 import ContactModal from '../components/ui/ContactModal.vue'
 import JobApplicationModal from '../components/ui/JobApplicationModal.vue'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const showContactModal = ref(false)
 const showJobModal = ref(false)
@@ -24,7 +27,7 @@ const closeJobModal = () => {
 </script>
 <template>
   <div class="about-page">
-    <h1>About The Burger Truck</h1>
+    <h1>{{ t('about.title') }}</h1>
     <div class="about-content">
       <section class="story">
         <h2>Our Story</h2>
@@ -53,10 +56,10 @@ const closeJobModal = () => {
         
         <div class="action-buttons">
           <button class="btn btn-primary" @click="contactUs">
-            Contact Us 📞
+            {{ t('about.contactUs') }} 📞
           </button>
           <button class="btn btn-secondary" @click="joinTeam">
-            Join Our Team 👨‍🍳
+            {{ t('about.joinTeam') }} 👨‍🍳
           </button>
         </div>
       </section>

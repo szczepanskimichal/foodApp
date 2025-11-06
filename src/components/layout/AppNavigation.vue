@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import LanguageSwitcher from '../ui/LanguageSwitcher.vue'
+import { useI18n } from '../../composables/useI18n'
+
+const { t } = useI18n()
 </script>
 <template>
   <nav class="nav"> 
@@ -9,11 +13,12 @@
           <span class="brand-text">ShmashingBurger</span>
       </router-link>
       <div class="nav-links">
-        <router-link to="/" class="nav-link">Home</router-link>
-        <router-link to="/menu" class="nav-link">Menu</router-link>
-        <router-link to="/about" class="nav-link">About</router-link>
-        <router-link to="/location" class="nav-link">Location</router-link>
-        <router-link to="/reviews" class="nav-link">Reviews</router-link>
+        <router-link to="/" class="nav-link">{{ t('nav.home') }}</router-link>
+        <router-link to="/menu" class="nav-link">{{ t('nav.menu') }}</router-link>
+        <router-link to="/about" class="nav-link">{{ t('nav.about') }}</router-link>
+        <router-link to="/location" class="nav-link">{{ t('nav.location') }}</router-link>
+        <router-link to="/reviews" class="nav-link">{{ t('nav.reviews') }}</router-link>
+        <LanguageSwitcher />
       </div>
     </div>
     </div>

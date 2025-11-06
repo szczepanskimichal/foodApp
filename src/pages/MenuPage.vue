@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useToast } from '../composables/useToast'
+import { useI18n } from '../composables/useI18n'
 
 const { showSuccess, showInfo } = useToast()
+const { t } = useI18n()
 
 interface MenuItem {
   id: number
@@ -192,8 +194,8 @@ const setCategory = (category: string) => {
 <template>
   <div class="menu-page">
     <div class="menu-header">
-      <h1>Our Menu</h1>
-      <p>Delicious burgers made with love and fresh ingredients</p>
+      <h1>{{ t('menu.title') }}</h1>
+      <p>{{ t('menu.subtitle') }}</p>
     </div>
 
     <!-- Category Filter -->
@@ -234,7 +236,7 @@ const setCategory = (category: string) => {
         <!-- Item Actions -->
         <div class="item-buttons">
           <button class="btn btn-primary" @click="addToCart(item)">
-            Add to Cart 🛒
+            {{ t('menu.addToCart') }} 🛒
           </button>
         </div>
       </div>
