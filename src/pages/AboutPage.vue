@@ -45,6 +45,10 @@ const closeJobModal = () => {
             <p>Founder & CEO</p>
           </div>
           <div class="team-member">
+            <h3>Michal Szczepanski</h3>
+            <p>Co-Founder & CTO</p>
+          </div>
+          <div class="team-member">
             <h3>Michal Jerzak</h3>
             <p>Head Chef</p>
           </div>
@@ -76,41 +80,75 @@ const closeJobModal = () => {
 }
 
 .about-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .about-content section {
+  margin-bottom: 4rem;
+}
+
+.about-content h1 {
+  text-align: center;
+  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 3rem;
 }
 
 .about-content h2 {
   color: #dc2626;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .about-content p {
   line-height: 1.7;
   color: #4b5563;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .team-member {
   text-align: center;
-  padding: 1rem;
-  background: #f9fafb;
-  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .team-member h3 {
   color: #1f2937;
   margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.team-member p {
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
 }
 
 .action-buttons {
@@ -156,6 +194,19 @@ const closeJobModal = () => {
 }
 
 @media (max-width: 768px) {
+  .about-content h1 {
+    font-size: 2rem;
+  }
+  
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
   .action-buttons {
     flex-direction: column;
     align-items: center;
