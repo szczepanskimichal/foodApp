@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import { useToast } from '../composables/useToast'
+
+const { showSuccess, showInfo } = useToast()
+
+const contactUs = () => {
+  showInfo('Feel free to call us or visit our location! 📍')
+}
+
+const joinTeam = () => {
+  showSuccess('We love passionate people! Send us your resume! 👨‍🍳')
+}
 </script>
 <template>
   <div class="about-page">
@@ -27,6 +38,15 @@
             <h3>Silje Vestrum Bakken</h3>
             <p>Marketing Specialist</p>
           </div>
+        </div>
+        
+        <div class="action-buttons">
+          <button class="btn btn-primary" @click="contactUs">
+            Contact Us 📞
+          </button>
+          <button class="btn btn-secondary" @click="joinTeam">
+            Join Our Team 👨‍🍳
+          </button>
         </div>
       </section>
     </div>
@@ -73,5 +93,58 @@
 .team-member h3 {
   color: #1f2937;
   margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #dc2626;
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-primary:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #dc2626;
+  border: 2px solid #dc2626;
+}
+
+.btn-secondary:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+  }
 }
 </style>
