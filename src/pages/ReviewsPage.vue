@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useToast } from '../composables/useToast';
+import { useI18n } from '../composables/useI18n';
 
 const { showSuccess, showError } = useToast();
+const { t } = useI18n();
 
 interface review {
   id: number;
@@ -82,8 +84,8 @@ const submitReview = () => {
 </script>
 <template>
   <div>
-    <h1>Customers Reviews</h1>
-    <p>What customers are saying about ours burgers</p>
+    <h1>{{ t('reviews.title') }}</h1>
+    <p>{{ t('reviews.subtitle') }}</p>
     <div class="review-grid">
       <div class="review-card" v-for="review in reviews" :key="review.id">
         <div class="review-header">
@@ -96,7 +98,7 @@ const submitReview = () => {
     </div>
 
     <div class="add-review">
-      <h2>Add Your Review</h2>
+      <h2>{{ t('reviews.writeReview') }}</h2>
       <form class="review-form" @submit.prevent="submitReview">
         <input v-model="newReview.name" class="form-input name-input" type="text" placeholder="Your Name" required />
         <select v-model="newReview.rating" class="form-input" required>

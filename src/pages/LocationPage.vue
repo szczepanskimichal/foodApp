@@ -1,7 +1,7 @@
 <template>
   <div class="location-page">
-    <h1>Find Us</h1>
-    <p>We're a mobile food truck - follow us for daily location updates!</p>
+    <h1>{{ t('location.title') }}</h1>
+    <p>{{ t('location.subtitle') }}</p>
     
     <!-- Map Section -->
     <div class="map-section">
@@ -44,7 +44,9 @@
 import { onMounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { useI18n } from '../composables/useI18n'
 
+const { t } = useI18n()
 const mapContainer = ref<HTMLElement>()
 
 onMounted(() => {

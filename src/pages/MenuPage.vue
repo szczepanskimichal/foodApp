@@ -163,14 +163,14 @@ const menuItems: MenuItem[] = [
   }
 ]
 
-const categories = [
-  { id: 'all', name: 'All Items', emoji: '🍽️' },
-  { id: 'burgers', name: 'Burgers', emoji: '🍔' },
-  { id: 'chicken', name: 'Chicken', emoji: '🐔' },
-  { id: 'sides', name: 'Sides', emoji: '🍟' },
-  { id: 'drinks', name: 'Drinks', emoji: '🥤' },
-  { id: 'desserts', name: 'Desserts', emoji: '🍫' }
-]
+const categories = computed(() => [
+  { id: 'all', name: t('menu.categories.all'), emoji: '🍽️' },
+  { id: 'burgers', name: t('menu.categories.burgers'), emoji: '🍔' },
+  { id: 'chicken', name: t('menu.categories.chicken'), emoji: '🐔' },
+  { id: 'sides', name: t('menu.categories.sides'), emoji: '🍟' },
+  { id: 'drinks', name: t('menu.categories.drinks'), emoji: '🥤' },
+  { id: 'desserts', name: t('menu.categories.desserts'), emoji: '🍫' }
+])
 
 const filteredItems = computed(() => {
   if (activeCategory.value === 'all') {
@@ -186,7 +186,7 @@ const addToCart = (item: MenuItem) => {
 
 const setCategory = (category: string) => {
   activeCategory.value = category
-  const categoryName = categories.find(c => c.id === category)?.name || 'items'
+  const categoryName = categories.value.find(c => c.id === category)?.name || 'items'
   showInfo(`Showing ${categoryName.toLowerCase()} 📋`)
 }
 </script>

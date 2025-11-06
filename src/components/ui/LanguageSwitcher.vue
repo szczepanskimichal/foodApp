@@ -5,7 +5,7 @@
       <span class="arrow" :class="{ open: isOpen }">▼</span>
     </button>
     
-    <div v-if="isOpen" class="dropdown">
+    <div v-show="isOpen" class="dropdown">
       <button
         v-for="lang in availableLanguages"
         :key="lang.code"
@@ -27,7 +27,8 @@ const { currentLanguage, currentLanguageData, availableLanguages, setLanguage } 
 
 const isOpen = ref(false)
 
-const toggleDropdown = () => {
+const toggleDropdown = (event: Event) => {
+  event.stopPropagation()
   isOpen.value = !isOpen.value
 }
 
@@ -37,8 +38,11 @@ const selectLanguage = (langCode: LanguageCode) => {
 }
 
 // Zamknij dropdown przy kliknięciu na zewnątrz
-const handleClickOutside = () => {
-  if (isOpen.value) {
+const handleClickOutside = (event: Event) => {
+  const target = event.target as Element
+  const switcher = document.querySelector('.language-switcher')
+  
+  if (switcher && !switcher.contains(target)) {
     isOpen.value = false
   }
 }
@@ -69,10 +73,14 @@ onUnmounted(() => {
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-width: 120px;
+  z-index: 10;
+  position: relative;
 }
 
 .lang-button:hover {
   background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
 }
 
 .arrow {
@@ -93,8 +101,9 @@ onUnmounted(() => {
   border: 1px solid #e5e7eb;
   border-radius: 0.375rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  z-index: 50;
+  z-index: 100;
   min-width: 140px;
+  overflow: hidden;
 }
 
 .lang-option {

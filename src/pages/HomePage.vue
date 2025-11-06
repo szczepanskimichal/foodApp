@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useToast } from '../composables/useToast'
+import { useI18n } from '../composables/useI18n'
 
 const router = useRouter()
 const { showSuccess, showInfo } = useToast()
+const { t } = useI18n()
 
 const goToMenu = () => {
   showInfo('Redirecting to our delicious menu! 🍔')
@@ -37,18 +39,17 @@ const handlePhoneCall = () => {
           <h1 class="hero-title">
             <span class="title-accent">Shmashing</span>Burger
           </h1>
-          <h2 class="hero-subtitle">FoodTruck Experience</h2>
+          <h2 class="hero-subtitle">{{ t('home.heroTitle') }}</h2>
           <p class="hero-description">
-            🍔 The best gourmet burgers in town, served fresh from our mobile kitchen! 
-            <br>We bring the restaurant experience directly to your location.
+            {{ t('home.heroSubtitle') }}
           </p>
           
           <div class="hero-buttons">
             <button class="btn btn-primary" @click="goToMenu">
-              View Our Menu 🍟
+              {{ t('home.heroButton') }} 🍟
             </button>
             <button class="btn btn-secondary" @click="goToReviews">
-              Read Reviews ⭐
+              {{ t('home.reviewsButton') }} ⭐
             </button>
           </div>
         </div>
@@ -68,26 +69,26 @@ const handlePhoneCall = () => {
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">🥬</div>
-            <h3>Fresh Ingredients</h3>
-            <p>We use only the freshest, locally sourced ingredients for the best taste</p>
+            <h3>{{ t('home.featureQuality') }}</h3>
+            <p>{{ t('home.featureQualityDesc') }}</p>
           </div>
           
           <div class="feature-card">
             <div class="feature-icon">🚚</div>
-            <h3>We Come to You</h3>
-            <p>Book our food truck for your event, office lunch, or private party</p>
+            <h3>{{ t('home.featureFresh') }}</h3>
+            <p>{{ t('home.featureFreshDesc') }}</p>
           </div>
           
           <div class="feature-card">
             <div class="feature-icon">👨‍🍳</div>
-            <h3>Unique Recipes</h3>
-            <p>Our chef-crafted burgers feature secret sauces and signature combinations</p>
+            <h3>{{ t('home.featureFresh') }}</h3>
+            <p>{{ t('home.featureFreshDesc') }}</p>
           </div>
           
           <div class="feature-card">
             <div class="feature-icon">⚡</div>
-            <h3>Fast Service</h3>
-            <p>Quick preparation without compromising quality - ready in 5 minutes</p>
+            <h3>{{ t('home.featureFast') }}</h3>
+            <p>{{ t('home.featureFastDesc') }}</p>
           </div>
         </div>
       </div>

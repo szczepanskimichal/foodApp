@@ -70,6 +70,7 @@ const { t } = useI18n()
 .nav-links {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .nav-link {

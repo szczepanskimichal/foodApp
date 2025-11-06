@@ -2,8 +2,8 @@
   <div class="not-found-page">
     <div class="error-content">
       <div class="error-number">404</div>
-      <h1>Page Not Found</h1>
-      <p>Looks like our food truck drove off with this page!</p>
+      <h1>{{ t('notFound.title') }}</h1>
+      <p>{{ t('notFound.message') }}</p>
       
       <div class="truck-container">
         <div class="road"></div>
@@ -12,12 +12,18 @@
       </div>
       
       <div class="actions">
-        <router-link to="/" class="btn btn-primary">Home</router-link>
-        <router-link to="/menu" class="btn btn-outline">Menu</router-link>
+        <router-link to="/" class="btn btn-primary">{{ t('notFound.backHome') }}</router-link>
+        <router-link to="/menu" class="btn btn-outline">{{ t('nav.menu') }}</router-link>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .not-found-page {
