@@ -66,7 +66,7 @@
           <button type="button" class="btn btn-secondary" @click="closeModal">
             Cancel
           </button>
-          <button type="submit" class="btn btn-primary" :disabled="isSubmitting">
+          <button type="submit" class="btn btn-primary" :disabled="isSubmitting || !isFormValid">
             {{ isSubmitting ? 'Sending...' : 'Send Message' }} ✉️
           </button>
         </div>
@@ -76,8 +76,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { useToast } from '../../composables/useToast'
+import { useEmailJS } from '../../composables/useEmailJS'
 
 interface Props {
   isOpen: boolean
@@ -90,7 +91,8 @@ interface Emits {
 defineProps<Props>()
 const emit = defineEmits<Emits>()
 
-const { showSuccess, showError } = useToast()
+const { showSuccess, showError, showWarning } = useToast()
+const { sendContactEmail, isConfigured } = useEmailJS()
 
 const isSubmitting = ref(false)
 
@@ -100,6 +102,13 @@ const form = reactive({
   phone: '',
   subject: '',
   message: ''
+})
+
+const isFormValid = computed(() => {
+  return form.name.trim() && 
+         form.email.trim() && 
+         form.subject && 
+         form.message.trim()
 })
 
 const closeModal = () => {
@@ -116,16 +125,47 @@ const resetForm = () => {
 }
 
 const submitForm = async () => {
+  if (!isFormValid.value) {
+    showWarning('Please fill in all required fields')
+    return
+  }
+
+  // Sprawdź czy EmailJS jest skonfigurowane
+  if (!isConfigured()) {
+    showWarning('Email service is not configured yet. Your message has been logged.')
+    console.log('Contact Form Submission (EmailJS not configured):', {
+      name: form.name,
+      email: form.email,
+      phone: form.phone || 'Not provided',
+      subject: form.subject,
+      message: form.message,
+      timestamp: new Date().toISOString()
+    })
+    showSuccess(`Thank you ${form.name}! Your message has been received. We'll get back to you soon! 📧`)
+    closeModal()
+    return
+  }
+  
   isSubmitting.value = true
   
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    const result = await sendContactEmail({
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      subject: form.subject,
+      message: form.message
+    })
     
-    showSuccess(`Thank you ${form.name}! Your message has been sent. We'll get back to you soon! 📧`)
-    closeModal()
+    if (result.success) {
+      showSuccess(`Thank you ${form.name}! Your message has been sent to michalszczepanski07@gmail.com. We'll get back to you soon! 📧`)
+      closeModal()
+    } else {
+      throw new Error('Failed to send email')
+    }
   } catch (error) {
-    showError('Failed to send message. Please try again later.')
+    console.error('Contact form error:', error)
+    showError('Failed to send message. Please try again later or contact us directly.')
   } finally {
     isSubmitting.value = false
   }

@@ -114,6 +114,7 @@
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue'
 import { useToast } from '../../composables/useToast'
+import { useEmailJS } from '../../composables/useEmailJS'
 
 interface Props {
   isOpen: boolean
@@ -126,7 +127,8 @@ interface Emits {
 defineProps<Props>()
 const emit = defineEmits<Emits>()
 
-const { showSuccess, showError } = useToast()
+const { showSuccess, showError, showWarning } = useToast()
+const { sendJobApplication, isConfigured } = useEmailJS()
 
 const isSubmitting = ref(false)
 
@@ -141,12 +143,12 @@ const form = reactive({
 })
 
 const isFormValid = computed(() => {
-  return form.fullName && 
-         form.email && 
-         form.phone && 
+  return form.fullName.trim() && 
+         form.email.trim() && 
+         form.phone.trim() && 
          form.position && 
          form.availability.length > 0 && 
-         form.coverLetter
+         form.coverLetter.trim()
 })
 
 const closeModal = () => {
@@ -165,18 +167,51 @@ const resetForm = () => {
 }
 
 const submitForm = async () => {
-  if (!isFormValid.value) return
+  if (!isFormValid.value) {
+    showWarning('Please fill in all required fields')
+    return
+  }
+
+  // Sprawdź czy EmailJS jest skonfigurowane
+  if (!isConfigured()) {
+    showWarning('Email service is not configured yet. Your application has been logged.')
+    console.log('Job Application Submission (EmailJS not configured):', {
+      fullName: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      position: form.position,
+      experience: form.experience || 'Not specified',
+      availability: form.availability,
+      coverLetter: form.coverLetter,
+      timestamp: new Date().toISOString()
+    })
+    showSuccess(`Thank you ${form.fullName}! Your application has been received. We'll review it and get back to you within 3-5 business days! 🎉`)
+    closeModal()
+    return
+  }
   
   isSubmitting.value = true
   
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    const result = await sendJobApplication({
+      fullName: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      position: form.position,
+      experience: form.experience,
+      availability: form.availability,
+      coverLetter: form.coverLetter
+    })
     
-    showSuccess(`Thank you ${form.fullName}! Your application has been submitted. We'll review it and get back to you within 3-5 business days! 🎉`)
-    closeModal()
+    if (result.success) {
+      showSuccess(`Thank you ${form.fullName}! Your application has been sent to michalszczepanski07@gmail.com. We'll review it and get back to you within 3-5 business days! 🎉`)
+      closeModal()
+    } else {
+      throw new Error('Failed to send application')
+    }
   } catch (error) {
-    showError('Failed to submit application. Please try again later.')
+    console.error('Job application error:', error)
+    showError('Failed to submit application. Please try again later or contact us directly.')
   } finally {
     isSubmitting.value = false
   }
