@@ -28,22 +28,8 @@ const showInstallPrompt = ref(false)
 let deferredPrompt: any = null
 
 onMounted(() => {
-  console.log('InstallPrompt mounted')
-  
-  // Sprawdź czy PWA może być zainstalowana
-  if ('serviceWorker' in navigator) {
-    console.log('Service Worker supported')
-  } else {
-    console.log('Service Worker NOT supported')
-  }
-  
-  // Sprawdź czy beforeinstallprompt jest wspierane
-  let installPromptSupported = false
-  
   // Nasłuchuj na event beforeinstallprompt
   window.addEventListener('beforeinstallprompt', (e) => {
-    console.log('beforeinstallprompt event fired - PWA installable!')
-    installPromptSupported = true
     e.preventDefault()
     deferredPrompt = e
     
@@ -54,54 +40,33 @@ onMounted(() => {
     }
   })
 
-  // Fallback - pokaż prompt po 3 sekundach jeśli beforeinstallprompt się nie wywołał
-  setTimeout(() => {
-    if (!installPromptSupported && !showInstallPrompt.value) {
-      console.log('beforeinstallprompt not fired, showing fallback prompt')
-      showInstallPrompt.value = true
-    }
-  }, 3000)
-
-  // Nasłuchuj na force install event
-  window.addEventListener('force-install-prompt', () => {
-    console.log('Force install prompt triggered')
-    showInstallPrompt.value = true
-  })
-
   // Sprawdź czy app jest już zainstalowana
   window.addEventListener('appinstalled', () => {
-    console.log('App installed!')
     showInstallPrompt.value = false
     localStorage.setItem('pwa-installed', 'true')
   })
   
   // Sprawdź czy to standalone mode (już zainstalowana)
   if (window.matchMedia('(display-mode: standalone)').matches) {
-    console.log('App running in standalone mode - already installed')
     showInstallPrompt.value = false
-  } else {
-    console.log('App running in browser mode')
   }
 })
 
 const installApp = async () => {
-  console.log('Install clicked, deferredPrompt:', deferredPrompt)
-  
   if (deferredPrompt) {
     try {
       deferredPrompt.prompt()
       const { outcome } = await deferredPrompt.userChoice
       
-      console.log('User choice:', outcome)
-      
       if (outcome === 'accepted') {
-        console.log('PWA installed')
+        // App zostanie zainstalowana
       }
       
       deferredPrompt = null
       showInstallPrompt.value = false
     } catch (error) {
-      console.error('Install error:', error)
+      // Błąd instalacji - pokaż instrukcje fallback
+      alert('Aby zainstalować aplikację:\n\n1. W Chrome: kliknij ikonę + w pasku adresu\n2. Lub Menu → Zainstaluj aplikację\n3. Na telefonie: Udostępnij → Dodaj do ekranu głównego')
     }
   } else {
     // Fallback - pokaż instrukcje
