@@ -13,9 +13,9 @@ const contactUs = () => {
   showContactModal.value = true
 }
 
-const joinTeam = () => {
-  showJobModal.value = true
-}
+// const joinTeam = () => {
+//   showJobModal.value = true
+// }
 
 const closeContactModal = () => {
   showContactModal.value = false
@@ -62,9 +62,9 @@ const closeJobModal = () => {
           <button class="btn btn-primary" @click="contactUs">
             {{ t('about.contactUs') }} 📞
           </button>
-          <button class="btn btn-secondary" @click="joinTeam">
+          <!-- <button class="btn btn-secondary" @click="joinTeam">
             {{ t('about.joinTeam') }} 👨‍🍳
-          </button>
+          </button> -->
         </div>
       </section>
     </div>

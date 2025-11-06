@@ -1,28 +1,20 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { useToast } from '../composables/useToast'
 import { useI18n } from '../composables/useI18n'
 
 const router = useRouter()
-const { showSuccess, showInfo } = useToast()
 const { t } = useI18n()
 
 const goToMenu = () => {
-  showInfo('Redirecting to our delicious menu! 🍔')
   setTimeout(() => {
     router.push('/menu')
   }, 500)
 }
 
 const goToReviews = () => {
-  showInfo('Loading customer reviews... ⭐')
   setTimeout(() => {
     router.push('/reviews')
   }, 500)
-}
-
-const handlePhoneCall = () => {
-  showSuccess('Great choice! Give us a call! 📞')
 }
 </script>
 
@@ -130,7 +122,7 @@ const handlePhoneCall = () => {
             <button class="btn btn-primary" @click="goToMenu">
               Order Now 🍔
             </button>
-            <a href="tel:+1234567890" class="btn btn-secondary" @click="handlePhoneCall">
+            <a href="tel:+1234567890" class="btn btn-secondary">
               Call Us: (123) 456-7890
             </a>
           </div>

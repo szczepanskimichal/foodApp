@@ -35,6 +35,21 @@
         <p>📞 (+47) 8687889</p>
         <p>📧 hello@burgertruck.com</p>
         <p>📱 Follow us @TheBurgerTruck</p>
+        
+        <!-- Social Media Links -->
+        <div class="social-media">
+          <h3>{{ t('location.followUs') }}</h3>
+          <div class="social-links">
+            <a href="https://facebook.com/TheBurgerTruck" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+              <span class="social-icon">📘</span>
+              <span class="social-text">Facebook</span>
+            </a>
+            <a href="https://instagram.com/TheBurgerTruck" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+              <span class="social-icon">📷</span>
+              <span class="social-text">Instagram</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -178,5 +193,81 @@ onMounted(() => {
   padding: 0.5rem;
   background: #f9fafb;
   border-radius: 0.25rem;
+}
+
+.social-media {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f3f4f6;
+}
+
+.social-media h3 {
+  color: #1f2937;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.social-link.facebook {
+  background: #4267B2;
+  color: white;
+  border: 2px solid #4267B2;
+}
+
+.social-link.facebook:hover {
+  background: white;
+  color: #4267B2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(66, 103, 178, 0.2);
+}
+
+.social-link.instagram {
+  background: #E4405F;
+  color: white;
+  border: 2px solid #E4405F;
+}
+
+.social-link.instagram:hover {
+  background: white;
+  color: #E4405F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(228, 64, 95, 0.2);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+}
+
+.social-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    flex-direction: column;
+  }
+  
+  .social-link {
+    min-width: auto;
+  }
 }
 </style>

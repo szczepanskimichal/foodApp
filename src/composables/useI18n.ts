@@ -167,7 +167,8 @@ const translations = reactive({
       address: 'Adresse',
       hours: 'Åpningstider',
       contact: 'Kontakt',
-      directions: 'Få veibeskrivelse'
+      directions: 'Få veibeskrivelse',
+      followUs: 'Følg oss'
     },
     en: {
       title: 'Find Us',
@@ -175,7 +176,8 @@ const translations = reactive({
       address: 'Address',
       hours: 'Opening Hours',
       contact: 'Contact',
-      directions: 'Get Directions'
+      directions: 'Get Directions',
+      followUs: 'Follow Us'
     },
     pl: {
       title: 'Znajdź nas',
@@ -183,7 +185,8 @@ const translations = reactive({
       address: 'Adres',
       hours: 'Godziny otwarcia',
       contact: 'Kontakt',
-      directions: 'Wskazówki dojazdu'
+      directions: 'Wskazówki dojazdu',
+      followUs: 'Śledź nas'
     },
     de: {
       title: 'Finde uns',
@@ -191,7 +194,8 @@ const translations = reactive({
       address: 'Adresse',
       hours: 'Öffnungszeiten',
       contact: 'Kontakt',
-      directions: 'Wegbeschreibung'
+      directions: 'Wegbeschreibung',
+      followUs: 'Folge uns'
     }
   },
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useToast } from '../composables/useToast'
+// import { useToast } from '../composables/useToast'
 import { useI18n } from '../composables/useI18n'
 
-const { showSuccess, showInfo } = useToast()
+// const { showSuccess, showInfo } = useToast()
 const { t } = useI18n()
 
 interface MenuItem {
@@ -179,15 +179,14 @@ const filteredItems = computed(() => {
   return menuItems.filter(item => item.category === activeCategory.value)
 })
 
-const addToCart = (item: MenuItem) => {
-  showSuccess(`${item.name} added to cart! 🛒`)
-  // Tu można by dodać logikę koszyka
-}
+// const addToCart = (item: MenuItem) => {
+//   showSuccess(`${item.name} added to cart! 🛒`)
+//   // Tu koszyk!!!
+// }
 
 const setCategory = (category: string) => {
   activeCategory.value = category
-  const categoryName = categories.value.find(c => c.id === category)?.name || 'items'
-  showInfo(`Showing ${categoryName.toLowerCase()} 📋`)
+  // Category changed - menu will automatically filter
 }
 </script>
 
@@ -234,11 +233,11 @@ const setCategory = (category: string) => {
         <div class="price">{{ item.price }} NOK</div>
         
         <!-- Item Actions -->
-        <div class="item-buttons">
+        <!-- <div class="item-buttons">
           <button class="btn btn-primary" @click="addToCart(item)">
             {{ t('menu.addToCart') }} 🛒
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
 
