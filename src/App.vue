@@ -6,17 +6,12 @@ import InstallPrompt from './components/ui/InstallPrompt.vue';
 </script>
 <template>
   <AppNavigation />
-
     <main class="main-content">
-     
         <router-view />
     </main>
-
-
     <AppFooter />
     <ToastContainer />
     <InstallPrompt />
-
 </template>
 <style>
 .app {
